@@ -8,6 +8,7 @@ import { BASE_URL } from '../utils/constants';
 const Login = () => {
 	const [emailId, setEmailId] = useState("");
 	const [password, setPassword] = useState("");
+	const [error, setError] = useState("");
 
 	const dispatch = useDispatch();
 	const navigate = useNavigate();
@@ -22,6 +23,7 @@ const Login = () => {
 			navigate("/feed");
 			dispatch(addUser(res.data));
 		} catch(err) {
+			setError(err);
 			console.log(err);
 		}
 	}
@@ -48,6 +50,7 @@ const Login = () => {
 							value={password}
 							onChange={(e)=>setPassword(e.target.value)}
 						/>
+						{error && <p className='text-red-500'>{error.message}</p>}
 					</fieldset>
 					<div className="card-actions justify-center">
       					<button className="btn btn-primary" onClick={handleLoginBtn}>Login</button>
@@ -58,4 +61,4 @@ const Login = () => {
   	)
 }
 
-export default Login
+export default Login;

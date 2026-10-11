@@ -12,7 +12,7 @@ const NavBar = () => {
 
     const handleLogout = () => {
         try {
-            axios.post(BASE_URL + "/logout", {emailId : user.emailId}, {withCredentials: true});
+            axios.post(BASE_URL + "/logout", { emailId : user.emailId }, { withCredentials: true });
             dispatch(removeUser());
             navigate("/login");
         } catch(err) {
