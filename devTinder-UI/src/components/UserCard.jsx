@@ -2,6 +2,7 @@ import React from 'react'
 import { useSelector } from 'react-redux';
 
 const UserCard = ({ feed }) => {
+    
     const {firstName, lastName, age, about, photoUrl, gender} = feed;
 
     return (
@@ -19,8 +20,8 @@ const UserCard = ({ feed }) => {
                     <p>{about}</p>
                     {age && gender && <p>{age}, {gender}</p>}
                     <div className="card-actions">
-                    <button className="btn btn-error">Ignore</button>
-                    <button className="btn btn-success">Accept</button>
+                    <button className="btn btn-primary">Ignore</button>
+                    <button className="btn btn-secondary">Accept</button>
                     </div>
                 </div>
             </div>
