@@ -23,11 +23,10 @@ const EditProfile = ({ user }) => {
                 {firstName, lastName, about, age, gender, photoUrl},
                  {withCredentials: true});
             setShowToast(true);
-            const interval = setTimeout(() => {
+            setTimeout(() => {
                 setShowToast(false);
             }, 3000)
             dispatch(addUser(res.data.data));
-            
         } catch (err) {
             showToast(true);
             setError(err);
@@ -40,7 +39,7 @@ const EditProfile = ({ user }) => {
                 <div className="card bg-base-300 w-96 shadow-sm">
                     <div className="card-body">
                         <h2 className="card-title justify-center">Edit Profile</h2>
-                            <div class="toast toast-top toast-center">
+                            <div class="toast toast-top toast-center z-50">
                                 { showToast && 
                                     <div class="alert alert-success">
                                         <span>Account updated successfully.</span>
