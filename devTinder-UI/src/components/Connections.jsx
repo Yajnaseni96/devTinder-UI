@@ -42,7 +42,7 @@ console.log("Is array:", Array.isArray(connections));
                     <div>
                         <div className="card w-96 bg-base-200 card-xs shadow-sm mt-2">
                             <div className="card-body">
-                                <h2 className="card-title">{conn.firstName}</h2>
+                                <h2 className="card-title">{conn.firstName} {conn.lastName}</h2>
                                 <p>{conn.about}</p>
                                 <img src={conn.photoUrl} />
                                 <p>{conn.age}, {conn.gender}</p>
