@@ -9,8 +9,6 @@ const Connections = () => {
     const connections = useSelector((store) => store.connections);
     const dispatch = useDispatch();
    
-    console.log("Redux state:", connections);
-console.log("Is array:", Array.isArray(connections));
     const [error, setError] = useState("");
 
     const fetchConnections = async() => {
@@ -47,8 +45,6 @@ console.log("Is array:", Array.isArray(connections));
                                 <img src={conn.photoUrl} />
                                 <p>{conn.age}, {conn.gender}</p>
                                 <div className="justify-start card-actions">
-                                <button className="btn btn-primary" >Accept</button>
-                                <button className="btn btn-error" >Reject</button>
                                 </div>
                             </div>
                         </div>
